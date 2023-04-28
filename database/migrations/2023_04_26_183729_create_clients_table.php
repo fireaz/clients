@@ -25,7 +25,7 @@ return new class extends Migration
             $table->boolean('client_build_number')->nullable();
             $table->boolean('client_update_required')->nullable();
             $table->boolean('locked')->default(0);
-            $table->integer('client_update_at');
+            $table->integer('client_update_at')->default(0);
             $table->json('client_option')->nullable();
             $table->timestamps();
         });
