@@ -1,9 +1,9 @@
 {
-  "name": "fireaz/boilerplate",
-  "description": "A PHP library for boilerplate code syntax.",
+  "name": "fireaz/clients",
+  "description": "A PHP library for clients code syntax.",
   "license": "MIT",
   "keywords": [],
-  "homepage": "https://github.com/fireaz/laravel-package-boilerplate",
+  "homepage": "https://github.com/fireaz/clients",
   "authors": [
     {
       "name": "nguyen van hau",
@@ -21,7 +21,7 @@
       "helpers/function.php"
     ],
     "psr-4": {
-      "FireAZ\\Boilerplate\\": "src/"
+      "FireAZ\\Clients\\": "src/"
     }
   },
   "autoload-dev": {
@@ -36,7 +36,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "FireAZ\\Boilerplate\\BoilerplateServiceProvider"
+        "FireAZ\\Clients\\ClientsServiceProvider"
       ],
       "aliases": {}
     }

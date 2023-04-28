@@ -1,0 +1,13 @@
+{
+  "id":"module-clients-e7cf9973-2e91-4eef-a19f-4558c72c8b546831801",
+  "name": "clients",
+  "alias": "clients",
+  "description": "",
+  "keywords": [],
+  "priority": 100,
+  "namespace": "FireAZ\\Clients",
+  "providers": ["FireAZ\\Clients\\ClientsServiceProvider"],
+  "aliases": {},
+  "files": [],
+  "requires": []
+}

@@ -1,12 +1,12 @@
 <?php
 
-namespace FireAZ\Boilerplate;
+namespace FireAZ\Clients;
 
 use Illuminate\Support\ServiceProvider;
 use FireAZ\LaravelPackage\ServicePackage;
-use FireAZ\LaravelPackage\WithServiceProvider;
+use FireAZ\Platform\Traits\WithServiceProvider;
 
-class BoilerplateServiceProvider extends ServiceProvider
+class ClientsServiceProvider extends ServiceProvider
 {
     use WithServiceProvider;
 
@@ -17,7 +17,7 @@ class BoilerplateServiceProvider extends ServiceProvider
          *
          */
         $package
-            ->name('boilerplate')
+            ->name('clients')
             ->hasConfigFile()
             ->hasViews()
             ->hasHelpers()
