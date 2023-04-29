@@ -11,3 +11,9 @@
 |
 */
 
+use FireAZ\Clients\Repositories\Interfaces\AppClientInterface;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/test123', function (AppClientInterface $appClient) {
+    return $appClient->all();
+});
