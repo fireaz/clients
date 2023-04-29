@@ -23,7 +23,7 @@ Route::post('/auth/login', function (Request $request) {
         return redirect()->to('login')
             ->withErrors(trans('auth.failed'));
     endif;
-
+    // @var \Illuminate\Contracts\Auth\Authenticatable|null
     $user = Auth::getProvider()->retrieveByCredentials($credentials);
     $exp_at = \time() + 60 * 60 * 24; // 24h
     return ['appClient' => $request->appClient(), 'user' => $user, 'token' => Jwt::encode($user->toArray(), ['exp' => $exp_at]), 'token_exp' => $exp_at];
