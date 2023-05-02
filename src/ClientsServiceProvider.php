@@ -2,8 +2,11 @@
 
 namespace FireAZ\Clients;
 
+use FireAZ\Clients\Models\AppAds;
 use FireAZ\Clients\Models\AppClient;
+use FireAZ\Clients\Repositories\Caches\AppAdsCacheDecorator;
 use FireAZ\Clients\Repositories\Caches\AppClientCacheDecorator;
+use FireAZ\Clients\Repositories\Eloquent\AppAdsRepositories;
 use FireAZ\Clients\Repositories\Eloquent\AppClientRepositories;
 use FireAZ\Clients\Repositories\Interfaces\AppClientInterface;
 use Illuminate\Support\ServiceProvider;
@@ -37,7 +40,11 @@ class ClientsServiceProvider extends ServiceProvider
         $this->app->bind(AppClientInterface::class, function () {
             return new AppClientCacheDecorator(new AppClientRepositories(new AppClient()));
         });
+        $this->app->bind(AppAdsInterface::class, function () {
+            return new AppAdsCacheDecorator(new AppAdsRepositories(new AppAds()));
+        });
     }
+
     public function packageBooted()
     {
         /** @var Router $router */

@@ -27,11 +27,20 @@ class AuthController extends Controller
             'token_exp' => $exp_at
         ]);
     }
-    public function me(Request $request)
+    public function register(Request $request)
     {
+        $credentials = $request->all();
+        $user = new (config('platform.model.user'));
+        $user->email =  $credentials['email'];
+        $user->name =  $credentials['name'];
+        $user->password = $credentials['password'];
+        $user->save();
+        $exp_at = \time() + 60 * 60 * 24; // 24h
         return Api::Json([
             'appClient' => $request->appClient(),
-            'user' => $request->user(),
+            'user' => $user,
+            'token' => Jwt::encode($user->toArray(), ['exp' => $exp_at]),
+            'token_exp' => $exp_at
         ]);
     }
 }

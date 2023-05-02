@@ -1,6 +1,7 @@
 <?php
 
 use FireAZ\Clients\Http\Controllers\AuthController;
+use FireAZ\Clients\Http\Controllers\SystemController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/auth/register', [AuthController::class, 'register']);
 Route::post('/auth/login', [AuthController::class, 'login']);
-Route::post('/auth/me', [AuthController::class, 'me']);
+Route::post('/system/me', [SystemController::class, 'me']);
+Route::post('/system/ads', [SystemController::class, 'ads']);
