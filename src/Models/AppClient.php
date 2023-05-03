@@ -33,4 +33,8 @@ class AppClient extends Model
     protected $casts = [
         'client_option' => 'array',
     ];
+    public function Ads()
+    {
+        return $this->hasMany(AppAds::class, 'client_id', 'id');
+    }
 }

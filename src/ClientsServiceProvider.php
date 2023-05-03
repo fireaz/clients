@@ -8,6 +8,7 @@ use FireAZ\Clients\Repositories\Caches\AppAdsCacheDecorator;
 use FireAZ\Clients\Repositories\Caches\AppClientCacheDecorator;
 use FireAZ\Clients\Repositories\Eloquent\AppAdsRepositories;
 use FireAZ\Clients\Repositories\Eloquent\AppClientRepositories;
+use FireAZ\Clients\Repositories\Interfaces\AppAdsInterface;
 use FireAZ\Clients\Repositories\Interfaces\AppClientInterface;
 use Illuminate\Support\ServiceProvider;
 use FireAZ\LaravelPackage\ServicePackage;
